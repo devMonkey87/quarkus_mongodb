@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import java.util.List;
 
-@Path("/pessoa")
+@Path("/persons")
 public class PersonResource {
 
     @Transactional
