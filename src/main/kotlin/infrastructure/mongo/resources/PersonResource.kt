@@ -1,7 +1,7 @@
-package org.acme.mongodb.panache.resources
+package infrastructure.mongo.resources
 
 import io.quarkus.mongodb.panache.PanacheMongoEntityBase
-import org.acme.mongodb.panache.entities.Person
+import infrastructure.mongo.entities.Person
 import org.bson.types.ObjectId
 import javax.transaction.Transactional
 import javax.ws.rs.*
