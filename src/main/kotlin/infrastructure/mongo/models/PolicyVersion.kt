@@ -1,4 +1,4 @@
-package org.acme.mongodb.panache.models
+package infrastructure.mongo.models
 
 import java.time.LocalDate
 

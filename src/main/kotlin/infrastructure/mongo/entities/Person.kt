@@ -1,4 +1,4 @@
-package org.acme.mongodb.panache.entities
+package infrastructure.mongo.entities
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import io.quarkus.mongodb.panache.PanacheMongoEntity
