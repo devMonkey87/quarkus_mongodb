@@ -10,11 +10,4 @@ class Person : PanacheMongoEntity() {
     var account = 0
 }
 
-fun test(valor1: String, valor2:String= "test"){
 
-}
-
-fun another(){
-    test(valor1 = "hola")
-
-}

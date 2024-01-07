@@ -1,4 +1,4 @@
-package infrastructure.mongo.resources
+package infrastructure.mongo.controllers
 
 import io.quarkus.mongodb.panache.PanacheMongoEntityBase
 import infrastructure.mongo.entities.Person
@@ -7,7 +7,7 @@ import javax.transaction.Transactional
 import javax.ws.rs.*
 
 @Path("/persons")
-class PersonResource {
+class PersonController {
     @Transactional
     @POST
     @Consumes("application/json")
@@ -39,9 +39,6 @@ class PersonResource {
     fun update(@PathParam("id") id: String?, personToSave: Person): Person {
         val personId = ObjectId(id)
         val person = PanacheMongoEntityBase.findById<Person>(personId)
-        if (personId == null) {
-            throw WebApplicationException(404)
-        }
         person.name = personToSave.name
         person.update()
         return person
