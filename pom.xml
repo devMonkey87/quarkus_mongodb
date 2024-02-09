@@ -64,6 +64,17 @@
             <artifactId>rest-assured</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kotlinx-serialization-core</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>bson-kotlinx</artifactId>
+            <version>4.11.0</version>
+        </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-smallrye-openapi</artifactId>
@@ -84,22 +95,10 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>
+        <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-kotlin-coroutine</artifactId>
             <version>4.11.0</version>
-        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-kotlin-sync -->
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-kotlin-sync</artifactId>
-            <version>4.11.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jetbrains.kotlinx</groupId>
-            <artifactId>kotlinx-serialization-json</artifactId>
-            <version>${serialization.version}</version>
         </dependency>
 
     </dependencies>

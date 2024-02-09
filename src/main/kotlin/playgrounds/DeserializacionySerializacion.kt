@@ -1,3 +1,4 @@
+/*
 package playgrounds
 
 import infrastructure.mongo.models.ObjetoSerializado
@@ -21,4 +22,4 @@ class DeserializacionySerializacion {
     }
 
 
-}
+}*/
