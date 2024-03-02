@@ -12,7 +12,7 @@ import java.math.BigDecimal
 @Serializable
 data class Car @JsonCreator constructor(
     @JsonProperty("id") @Contextual val id: ObjectId?,
-    @JsonProperty("name") val name: String,
+    @JsonProperty("name") var name: String,
     @JsonProperty("wheels") val wheels: Int,
     @JsonProperty("price") @Contextual val price: BigDecimal?
 )

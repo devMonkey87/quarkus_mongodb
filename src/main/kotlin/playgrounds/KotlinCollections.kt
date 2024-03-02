@@ -1,7 +1,6 @@
 package playgrounds
 
-import infrastructure.mongo.models.TestPolicy
-import infrastructure.mongo.models.TestPolicyVersion
+import infrastructure.mongo.models.*
 import java.time.LocalDate
 
 class KotlinCollections {
@@ -34,4 +33,24 @@ class KotlinCollections {
         val policyVersionList = policyVersions.filter { it.version == policyVersionNumber }
         return TestPolicy(policyVersions = policyVersionList, name = "test")
     }
+
+
+    private fun deactivatePolicyVersion(
+        policyVersionNumber: String,
+        policyVersion: PolicyVersion,
+        underwritingResult: UnderwritingResult
+    ) {
+        val containsValidState =
+
+            if (underwritingResult.rules.any { validStates.contains(it.state) }) {
+                println("BORRADO")
+            } else {
+                println("NO BORRADO!!")
+            }
+    }
+
+    companion object {
+        private val validStates = setOf("DEACTIVATE", "IMPACT")
+    }
+
 }

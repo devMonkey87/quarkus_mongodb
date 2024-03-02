@@ -1,11 +1,7 @@
 package infrastructure.mongo
 
-import com.mongodb.MongoClientSettings
 import com.mongodb.kotlin.client.coroutine.MongoClient
 import com.mongodb.kotlin.client.coroutine.MongoDatabase
-import infrastructure.mongo.entities.Car
-import org.bson.codecs.configuration.CodecRegistries
-import org.bson.codecs.pojo.PojoCodecProvider
 import javax.enterprise.context.ApplicationScoped
 
 @ApplicationScoped

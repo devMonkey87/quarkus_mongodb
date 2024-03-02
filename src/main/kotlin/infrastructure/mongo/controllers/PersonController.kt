@@ -2,37 +2,38 @@ package infrastructure.mongo.controllers
 
 import io.quarkus.mongodb.panache.PanacheMongoEntityBase
 import infrastructure.mongo.entities.Person
+import infrastructure.mongo.services.PersonService
 import org.bson.types.ObjectId
 import javax.transaction.Transactional
 import javax.ws.rs.*
 
 @Path("/persons")
-class PersonController {
+class PersonController(private val personService: PersonService) {
     @Transactional
     @POST
     @Consumes("application/json")
     @Produces("application/json")
     fun create(newPerson: Person): Person {
-        PanacheMongoEntityBase.persist(newPerson)
+        personService.save(newPerson)
         return newPerson
     }
 
     @GET
     @Produces("application/json")
     fun listAll(): List<Person> {
-        return PanacheMongoEntityBase.listAll()
+        return personService.getAll()
     }
 
-    @GET
+/*    @GET
     @Path("{id}")
     @Produces("application/json")
     @Consumes("application/json")
     fun getById(@PathParam("id") id: String?): Person {
         val personId = ObjectId(id)
         return PanacheMongoEntityBase.findById(personId) ?: throw WebApplicationException(404)
-    }
+    }*/
 
-    @PUT
+/*    @PUT
     @Path("{id}")
     @Produces("application/json")
     @Consumes("application/json")
@@ -42,7 +43,7 @@ class PersonController {
         person.name = personToSave.name
         person.update()
         return person
-    }
+    }*/
 
     @DELETE
     @Path("{id}")

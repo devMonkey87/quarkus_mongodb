@@ -1,8 +1,18 @@
+import io.quarkus.runtime.Quarkus
 import io.quarkus.runtime.annotations.QuarkusMain
-
-class Main {
-
+import playgrounds.KotlinCollections
 
 
+@QuarkusMain
+object Main {
+
+    private val kotlinCol: KotlinCollections = KotlinCollections()
+
+    @JvmStatic
+    fun main(args: Array<String>) {
+        Quarkus.run(*args)
+
+
+    }
 
 }

@@ -1,13 +1,10 @@
 package infrastructure.mongo.entities
 
-import com.fasterxml.jackson.annotation.JsonProperty
-import io.quarkus.mongodb.panache.PanacheMongoEntity
+data class Person(
+    var name: String? = null,
+    var status: String? = null,
+    var account: Int = 0
+)
 
-class Person : PanacheMongoEntity() {
-    @JsonProperty
-    var name: String? = null
-    var status: String? = null
-    var account = 0
-}
 
 
