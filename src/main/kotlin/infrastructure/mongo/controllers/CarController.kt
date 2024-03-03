@@ -2,7 +2,6 @@ package infrastructure.mongo.controllers
 
 import com.mongodb.MongoClientSettings
 import com.mongodb.client.model.Filters
-import infrastructure.config.ConfigProperties
 import infrastructure.mongo.MongoClientConfig
 import infrastructure.mongo.entities.Car
 import kotlinx.coroutines.GlobalScope
@@ -19,7 +18,6 @@ private const val MY_DYNAMIC_VALUE = "Valor"
 
 @Path("/cars")
 class CarController(
-    private val configProperties: ConfigProperties,
     private val mongoDatabase: MongoClientConfig
 ) {
 
